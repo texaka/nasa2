@@ -11,12 +11,14 @@
     "client": "npm start --prefix client",
     "watch": "npm run server & npm run client",
     "deploy": "_message='hello world' && npm run build --prefix client && npm start --prefix server",
+    "deploy-cluster": "_message='hello world' && npm run build --prefix client && npm run cluster --prefix server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mongoose": "^6.5.0",
     "morgan": "^1.10.0"
   }
 }

@@ -1,15 +1,16 @@
 const {
   getAllLaunches,
-  addNewLaunch,
+  //addNewLaunch,
+  scheduleNewLaunch,
   existsLaunchWithId,
   abortLauchById,
 } = require("../../models/launches.model");
 
-function httpGetAllLaunches(req, res) {
-  return res.status(200).json(getAllLaunches());
+async function httpGetAllLaunches(req, res) {
+  return res.status(200).json(await getAllLaunches());
 }
 
-function httpAddNewLunch(req, res) {
+async function httpAddNewLunch(req, res) {
   const launch = req.body;
   if (
     !launch.mission ||
@@ -27,8 +28,8 @@ function httpAddNewLunch(req, res) {
       error: "The Launch date field is incorrect",
     });
   }
-  addNewLaunch(launch);
-
+  //addNewLaunch(launch);
+  await scheduleNewLaunch(launch);
   return res.status(201).json(launch);
 
   //httpGetAllLaunches
