@@ -10,14 +10,15 @@
     "server": "npm run watch --prefix server",
     "client": "npm start --prefix client",
     "watch": "npm run server & npm run client",
-    "deploy": "_message='hello world' && npm run build --prefix client && npm start --prefix server",
-    "deploy-cluster": "_message='hello world' && npm run build --prefix client && npm run cluster --prefix server",
+    "deploy": "npm run build --prefix client && npm start --prefix server",
+    "deploy-cluster": "npm run build --prefix client && npm run cluster --prefix server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jest": "^28.1.3",
     "mongoose": "^6.5.0",
     "morgan": "^1.10.0"
   }
